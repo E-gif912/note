@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* min-height: 70vh; */
+    height: 70vh;
+    background :linear-gradient(135deg, #667eea, #764ba2);
+    
+    
+}
+
+.container{
+    background: white;
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    margin: 15px;
+}
+
+.login_header{
+    text-align: center;
+    margin-bottom: 32px;
+
+}
+
+.login_header h1{
+    color: #333;
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.login_form{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+
+.Email{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.Email label{
+    color: #555;
+    font-size: 20px;
+}
+
+.Email input{
+    padding: 12px;
+    border: 1px solid;
+    border-radius: 5px;
+    font-size: 8px;
+     
+
+}
+
+.login_button{
+    background-color: #667eea;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+
+}
+
+.login_link{
+    text-align: center;
+    margin-top: 8px;
+    font-size: 15px;
+}

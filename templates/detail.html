@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Note - Notes App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <h1 class="text-2xl font-bold text-gray-800">Create New Note</h1>
+                <a href="#notes-list" class="text-gray-600 hover:text-gray-800 transition duration-200">
+                    Back to Notes
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-4 py-8">
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <form class="space-y-6" method="POST">
+                {% csrf_token %}
+                <div>
+                    <label for="title" class="block text-sm font-medium text-gray-700 mb-2">
+                        Title
+                    </label>
+                    <input
+                        type="text"
+                        id="title"
+                        name="title"
+                        value="{{ post.title|default:''}}"
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition duration-200"
+                        placeholder="Enter note title..."
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label for="content" class="block text-sm font-medium text-gray-700 mb-2">
+                        Content
+                    </label>
+                    <textarea
+                        id="content"
+                        name="content"
+                        rows="6"
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition duration-200"
+                        placeholder="Enter note content..."
+                        required
+                    >
+                    {{ post.content }}
+                </textarea>
+                </div>
+
+                <div class="flex justify-end space-x-4">
+                    <button
+                        type="button"
+                        class="px-6 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition duration-200"
+                    >
+                        Cancel
+                    </button>
+                    <button
+                        type="submit"
+                        class="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-200"
+                    >
+                        Create Note
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
