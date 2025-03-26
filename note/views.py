@@ -6,7 +6,7 @@ from django.contrib.auth import authenticate, logout
 from django.contrib.auth import login
 # Create your views here.
 
-@login_required
+
 def main(request):
     # user = request.user
     # post = Note.objects.all(user=user)
